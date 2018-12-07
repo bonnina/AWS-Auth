@@ -1,3 +1,8 @@
+const connectToDatabase = require('../DB');
+const User = require('../user/model');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs-then');
+
 /* function */
 
 module.exports.login = (event, context) => {
