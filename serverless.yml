@@ -20,3 +20,11 @@ functions:
           path: users
           method: get
           cors: true
+  
+  signup:
+    handler: auth/signupHandler.signup
+    events:
+      - http:
+          path: signup
+          method: post
+          cors: true
