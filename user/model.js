@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
  
-const validator = email => {
+const emailValidator = email => {
   const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return re.test(email);
 };
@@ -18,7 +18,7 @@ const UserSchema = new Schema(
     email: {
       type: String,
       required: [true, "Required!"],
-      validate: [validator, "Invalid email!"],
+      validate: [emailValidator, "Invalid email!"],
       maxlength: [50, "Too Long!"],
       unique: true,
       trim: true
@@ -26,6 +26,7 @@ const UserSchema = new Schema(
     password: {
       type: String,
       required: [true, "Required!"],
+      minlength: [8, "Password needs to be longer than 8 characters"],
     }
   }
 );
