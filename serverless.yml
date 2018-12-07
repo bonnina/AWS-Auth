@@ -28,3 +28,14 @@ functions:
           path: signup
           method: post
           cors: true
+
+  login:
+    handler: auth/loginHandler.login
+    events:
+      - http:
+          path: login
+          method: post
+          cors: true
+  
+  verify-token:
+    handler: auth/verify.auth
