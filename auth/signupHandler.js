@@ -26,7 +26,7 @@ module.exports.signup = (event, context) => {
 /* Helpers */
 
 function signToken(id) {
-  return jwt.sign({ id: id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+  return jwt.sign({ name: id }, process.env.JWT_SECRET, { expiresIn: '1d' });
 }
 
 function register(reqBody) {
