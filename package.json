@@ -1,0 +1,13 @@
+{
+  "name": "aws-auth",
+  "version": "1.0.0",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bcryptjs-then": "^1.0.1",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.15"
+  },
+  "devDependencies": {
+    "serverless-offline": "^3.31.3"
+  }
+}
