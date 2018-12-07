@@ -39,3 +39,12 @@ functions:
   
   verify-token:
     handler: auth/verify.auth
+
+  profile:
+    handler: auth/profileHandler.profile
+    events:
+      - http:
+          path: profile
+          method: get
+          cors: true
+          authorizer: verify-token
