@@ -6,11 +6,12 @@ custom:
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: dev
+  stage: ${self:custom.secrets.NODE_ENV}
   region: us-east-1
   environment:
     JWT_SECRET: ${self:custom.secrets.JWT_SECRET}
     DB: ${self:custom.secrets.DB}
+    NODE_ENV: ${self:custom.secrets.NODE_ENV}
 
 functions:
   getUsers:
@@ -26,6 +27,14 @@ functions:
     events:
       - http:
           path: signup
+          method: post
+          cors: true
+
+  register:
+    handler: auth/registerHandler.register
+    events:
+      - http:
+          path: register
           method: post
           cors: true
 
