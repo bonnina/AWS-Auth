@@ -1,6 +1,10 @@
 {
   "name": "aws-auth",
   "version": "1.0.0",
+  "scripts": {
+    "offline": "sls offline start --skipCacheInvalidation",
+    "production": "rm -rf ./node_modules && npm i --production"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "bcryptjs-then": "^1.0.1",
