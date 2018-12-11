@@ -45,6 +45,14 @@ functions:
           path: login
           method: post
           cors: true
+
+  signin:
+    handler: auth/signinHandler.signin
+    events:
+      - http:
+          path: signin
+          method: post
+          cors: true
   
   verify-token:
     handler: auth/verify.auth
