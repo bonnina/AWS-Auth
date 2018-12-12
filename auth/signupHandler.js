@@ -14,6 +14,10 @@ module.exports.signup = (event, context) => {
     )
     .then(res => ({
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify(res)
     }))
     .catch(err => ({
