@@ -28,7 +28,8 @@ functions:
       - http:
           path: signup
           method: post
-          cors: true
+          cors:
+            origin: '*'
 
   register:
     handler: auth/registerHandler.register
@@ -36,7 +37,8 @@ functions:
       - http:
           path: register
           method: post
-          cors: true
+          cors:
+            origin: '*'
 
   login:
     handler: auth/loginHandler.login
@@ -44,7 +46,8 @@ functions:
       - http:
           path: login
           method: post
-          cors: true
+          cors:
+            origin: '*'
 
   signin:
     handler: auth/signinHandler.signin
@@ -52,7 +55,8 @@ functions:
       - http:
           path: signin
           method: post
-          cors: true
+          cors:
+            origin: '*'
   
   verify-token:
     handler: auth/verify.auth
@@ -63,7 +67,8 @@ functions:
       - http:
           path: profile
           method: get
-          cors: true
+          cors:
+            origin: '*'
           authorizer: verify-token
 
 plugins:
